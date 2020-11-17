@@ -9,10 +9,9 @@ router.route('/').get( async(req, res) => {
 
 router.post('/add', async(req, res) => {
     console.log(req.body)
-    const { firstName, lastName } = req.body;
+    const { name } = req.body;
     const newUser = new User({
-        firstName,
-        lastName
+        name
     })
 
     const user = await newUser.save();

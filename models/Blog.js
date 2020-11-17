@@ -5,10 +5,6 @@ const blogSchema = new Schema({
     title: String,
     body: String,
     author: String,
-    // author: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'User'
-    // },
     comments: [
         {
             body: String,
@@ -23,7 +19,8 @@ const blogSchema = new Schema({
     meta: {
         votes: Number,
         favs: Number
-    }
+    },
+    users: [String]
 })
 
 const Blog = mongoose.model('Blog', blogSchema);
