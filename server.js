@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const userRouter = require('./routes/users');
+const blogRouter = require('./routes/blogs');
 
 const PORT = 5000;
 const uri = 'mongodb://localhost:27017/blog-project';
@@ -20,6 +21,7 @@ app.use(express.json({ extended: false }));
 
 
 app.use('/users', userRouter);
+app.use('/blogs', blogRouter);
 
 // Start server
 app.listen(PORT, () => {
